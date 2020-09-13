@@ -1,0 +1,37 @@
+\section*{Question 2: python revision}
+
+As a warm up for doing simple calculations with python.
+consider the sum of the square of $n$ integers.
+
+$$
+S_n = \sum_{i=0}^{n} i^2
+$$
+
+The value of $S_n$ can be computed explicitly:
+$$
+S_n = \frac{1}{6} n (n+1) (2n+1)
+$$
+
+However, for an application we are interested in, the 
+standard deviation ($\sigma$)
+of the series of the sum of the squares
+of the integers is required to be computed.
+The series is defined by
+$$
+x_i = i^2
+$$
+where $i$ ranges from 1 to n.
+
+$$
+\sigma_n = \sqrt{ \frac{1}{n}  \sum_{i=1}^{n} ( x_i - \overline{x} )^2      }
+$$
+where  $\overline{x}$ is the mean of the sequence.
+
+
+On the DLE is a python script \textbf{Q2\_lab1\_hint.py} which implements the above,
+but the lines are in the wrong order. Reorder the lines of code so
+that the above is implemented.  Test the script by computing $S_n$
+and $\sigma_n$ for $n=4$.
+
+
+

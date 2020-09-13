@@ -1,0 +1,51 @@
+\section*{Question 1: python revision}
+
+An engineer, who is designing optical fibers, asks you to solve
+Snell's law for $\theta_{air}$ given values of $\theta_{glass}$ (input
+from the user)),
+$n_{air}$ = 1 (fixed), and $n_{glass}$ = 1.4 (fixed).
+
+$$
+n_{air} \sin( \theta_{air} ) = n_{glass} \sin( \theta_{glass} ) 
+$$
+
+The engineer wants to be able to input a value for
+$\theta_{glass}$ in degrees and ouput a value
+of $\theta_{air}$ in degress. For some values of $\theta_{glass}$
+there is no solution for $\theta_{air}$ so your script should
+deal with this situation (I suggest you use the \textbf{if} statement
+to do this).
+The engineer gives
+you the script \textbf{Q1\_lab1\_hint.py} as a starting
+point.
+
+To develop the script I suggest you follow an idea called
+test driven development
+(\url{https://en.wikipedia.org/wiki/Test-driven_development}).
+You design simple test cases by hand and calculator and
+then use the test cases to build up the script. In the above
+example, you can have test cases to check the computed value of
+$\theta_{air}$, but you can also check intermediate steps, such as
+converting degrees to radians.
+
+
+I suggest the following steps to modify the code.
+
+\begin{itemize}
+
+\item Download and run the python script \textbf{Q1\_lab1\_hint.py} from
+  the DLE.
+
+\item Develop a test case using a calculator for $\theta_{glass}$ =
+  30\si{\degree}, by solving the above equation for $\theta_{air}$.
+
+\item Develop a test case where there is no solution.
+
+\item Modify the script so that it does what the engineer wants.
+
+\item Test the script using the two test cases.
+
+\end{itemize}
+
+
+% LocalWords:  ouput degress py

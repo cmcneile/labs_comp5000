@@ -1,0 +1,22 @@
+\section*{Question 5: Symbolic algebra with python}
+
+In the first lecture on linear programming, the brute force
+method of solving linear programs was shows. This required
+4 simultaneous equations with 4 variables to be solved.
+Maple was used solve the equatiions in the lecture. 
+
+Python has a library which can do symbolic 
+manipulations called SymPy
+(\url{https://www.sympy.org/en/index.html}).
+The script \textbf{Q5\_hint.py} uses SymPy to solve
+
+\begin{eqnarray}
+3 x_1 + x_2 - x_3 & = & 10 \nonumber \\
+x_1 + x_2 - 2x_3 & = & 4 \nonumber \\
+\end{eqnarray}
+The $x_3$ variable is set to zero at the end, because
+this is how it is used in the linear programming example.
+
+Modify the script \textbf{Q5\_hint.py} on the DLE so that 
+it solves the problem on page 22 of the lecture notes. 
+There is useful documentation at \url{https://docs.sympy.org/1.5.1/tutorial/index.html}.
