@@ -1,0 +1,139 @@
+%%
+%%  top 
+%%
+
+\usepackage{amsfonts,amssymb,amsmath}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{graphics}
+%\usepackage{axodraw4j}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{lastpage} % determines last page number
+\usepackage[labelfont=bf]{caption} % makes figure caption label printed in bold
+\usepackage{sansmath}
+
+\usepackage{hyperref}
+%path to pictures repository
+\graphicspath{ {./pictures/} }
+
+%providing sans serif in text mode
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+
+%command to change maths font size
+\DeclareMathSizes{12}{13}{10}{8}  % For size 12 text
+
+%reportstyle-enumeration:
+\catcode`\@=11 \@addtoreset{equation}{section}
+\def\theequation{\textsf{\thesection.\arabic{equation}}}
+\catcode`@=12
+
+%abbreviations for textmode
+\newcommand{\nn}{\nonumber}
+
+%abbreviations for display-mode
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\bean}{\begin{eqnarray*}}
+\newcommand{\eean}{\end{eqnarray*}}
+\newcommand{\blackbox}{\rule{2mm}{2mm}}
+\newcommand{\Nabla}{\boldsymbol{\nabla}}
+\newcommand{\bra}{\langle}
+\newcommand{\ket}{\rangle}
+\newcommand{\D}{\displaystyle}
+\newcommand{\xhat}{\hat{x}\,}
+\newcommand{\phat}{\hat{p}\,}
+\newcommand{\hhat}{\hat{H}\,}
+\newcommand{\ahat}{\hat{A}}
+\newcommand{\bhat}{\hat{B}}
+\newcommand{\chat}{\hat{C}}
+\newcommand{\ohat}{\hat{O}}
+\newcommand{\shat}{\hat{S}}
+\newcommand{\ahatd}{\hat{A}^\dagger}
+\newcommand{\bhatd}{\hat{B}^\dagger}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\S}{\mathfrak{S}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\tr}{\mathsf{tr}}
+\newcommand{\prob}{\mathsf{Prob}}
+\renewcommand{\Re}{\mathsf{Re}\,}
+\renewcommand{\Im}{\mathsf{Im}\,}
+
+%commands with input variables
+\newcommand{\sfrac}[2]{{\textstyle \frac{#1}{#2}}}
+\newcommand{\pad}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\fud}[2]{\frac{\delta #1}{\delta #2}}
+\newcommand{\comm}[2]{\left[#1 \, , \, #2 \right] }
+\newcommand{\vcb}[1]{\mbox{\bf #1}}
+\newcommand{\svcb}[1]{\mbox{\footnotesize\bf #1}}
+\newcommand{\vc}[1]{\mbox{\sffamily\textbf{#1}}}
+\newcommand{\svc}[1]{\mbox{\sffamily\footnotesize\textbf{#1}}}
+\newcommand{\ssvc}[1]{\mbox{\sffamily\scriptsize\textbf{#1}}}
+\newcommand{\vcr}[1]{\mbox{\boldmath$#1$}}
+\newcommand{\svcr}[1]{\mbox{\footnotesize\boldmath$#1$}}
+\newcommand{\ssvcr}[1]{\mbox{\scriptsize\boldmath$#1$}}
+\newcommand{\pb}[2]{\left\{#1 \, , \, #2 \right\}}
+\newcommand{\twovector}[2]{\left( \begin{array}{c}
+                               #1 \\ #2 \end{array} \right)}
+\newcommand{\threevector}[3]{\left( \begin{array}{c}
+                               #1 \\ #2 \\ #3 \end{array} \right)}
+\newcommand{\myfootnote}[1]{\footnote{\textsf{#1}}}
+\newcommand{\expect}[1]{\left \langle #1 \right\rangle}
+\newcommand{\ip}[2]{{\left(\right.}#1,#2{\left.\right)}}
+\newcommand{\braket}[2]{{\left<\right.}#1\left|\right.#2{\left.\right>}}
+
+\usepackage{siunitx}
+
+%definition of lambdabar
+\def\lambdabar{\protect\@lambdabar}
+\def\@lambdabar{%
+\relax \bgroup
+\def\@tempa{\hbox{\raise.73\ht0
+\hbox to0pt{\kern.2\wd0\vrule width.7\wd0
+height.1pt depth.1pt\hss}\box0}}%
+\mathchoice{\setbox0\hbox{$\displaystyle\lambda$}\@tempa}%
+{\setbox0\hbox{$\textstyle\lambda$}\@tempa}%
+{\setbox0\hbox{$\scriptstyle\lambda$}\@tempa}%
+{\setbox0\hbox{$\scriptscriptstyle\lambda$}\@tempa}%
+\egroup }
+
+
+%additional environments
+\newtheorem{Theorem}{Theorem}
+\newtheorem{Proposition}{Proposition}
+\newtheorem{Experiment}{Experiment}
+\newtheorem{Example}{Example}
+\newtheorem{Exercise}{Exercise}
+\newtheorem{Definition}{Definition}
+\newtheorem{Rule}{Rule}
+\newtheorem{Warning}{Warning}
+\newtheorem{Aside}{Aside}
+\newtheorem{Postulate}{Postulate}
+
+\renewcommand{\labelenumi}{\emph{(\alph{enumi})}}
+
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+%\pagenumbering{gobble} % for invisible pagenumbers
+%\renewcommand{\headrulewidth}{0pt}% removes header line
+
+% for chapter starting pages
+\fancypagestyle{plain}{
+  \fancyhf{}% clears header fields
+% \fancyhead[L]{MATH3401}%{\leftmark}% Chapter in header Left
+% \fancyhead[R]{\thepage}% Page number in header Right
+  \rhead{\hyperlink{MATH3401}{TOC}}}  
+  \rhead{\hyperlink{contents}{TOC}}
+% \cfoot{\hyperlink{MATH3401}{TOC}}}
+% \cfoot{\hyperlink{contents}{TOC}}% links the TOC at the center of the page footer
+  \cfoot{\thepage}
+  
+\widowpenalty=1000
+\clubpenalty=2000
